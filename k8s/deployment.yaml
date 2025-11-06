@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: flask-backend
-        image: asia-south1-docker.pkg.dev/<PROJECT_ID>/flask-repo/flask-backend:v1
+        image: asia-south1-docker.pkg.dev/venu-k/flask-repo/flask-backend:v1
         ports:
         - containerPort: 5000
 
