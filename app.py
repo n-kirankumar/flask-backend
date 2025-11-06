@@ -1,0 +1,20 @@
+from flask import Flask, jsonify, request
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return jsonify({"message": "Welcome to Flask Backend!"})
+
+@app.route('/api/data', methods=['GET'])
+def get_data():
+    return jsonify({"data": ["apple", "banana", "cherry"]})
+
+@app.route('/api/add', methods=['POST'])
+def add_item():
+    item = request.json.get('item')
+    return jsonify({"added": item})
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+
